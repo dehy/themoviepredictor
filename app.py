@@ -1,3 +1,8 @@
+"""
+TheMoviePredictor script
+Author: Arnaud de Mouhy <arnaud@admds.net>
+"""
+
 import mysql.connector
 import sys
 import argparse
@@ -60,7 +65,6 @@ if args.context == "people":
     if args.action == "list":
         people = findAll("people")
         if args.export:
-            print('exportation')
             with open(args.export, 'w', encoding='utf-8', newline='\n') as csvfile:
                 writer = csv.writer(csvfile)
                 writer.writerow(people[0].keys())
